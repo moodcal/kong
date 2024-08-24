@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>下载文件</title>
+</head>
+<body>
+    <h1>下载文件</h1>
+    <p>点击下面的链接下载文件（生成日期： <span id="currentDate"></span>）：</p>
+    
+    <a id="csvLink" href="#" download>下载 CSV</a><br>
+    <a id="excelLink" href="#" download>下载 Excel</a>
+
+    <script>
+        // 获取当前日期作为文件名
+        var currentDate = new Date().toISOString().slice(0, 10);
+
+        // 设置当前日期
+        document.getElementById('currentDate').textContent = currentDate;
+
+        // 设置文件名
+        var csvFileName = currentDate + '.csv';
+        var excelFileName = currentDate + '.xlsx';
+
+        // 设置下载链接
+        document.getElementById('csvLink').setAttribute('href', csvFileName);
+        document.getElementById('excelLink').setAttribute('href', excelFileName);
+    </script>
+</body>
+</html>

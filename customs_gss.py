@@ -6,6 +6,7 @@ import time
 import csv
 import datetime
 import pandas as pd
+import subprocess
 
 # Step 1: Use Selenium to open the page and get cookies and the verification token
 options = webdriver.ChromeOptions()
@@ -95,3 +96,14 @@ excel_file_path = date_name + '.xlsx'
 df = pd.DataFrame(extracted_data)
 df.to_csv(csv_file_path, index=False)
 df.to_excel(excel_file_path, index=False)
+
+# 保存文件后执行以下代码
+
+# 添加文件到暂存区
+subprocess.run(["git", "add", "."])
+
+# 提交到本地仓库
+subprocess.run(["git", "commit", "-m", "Add new files"])
+
+# 推送到GitHub
+subprocess.run(["git", "push", "origin", "main"])

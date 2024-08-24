@@ -47,7 +47,7 @@ headers = {
 payload = {
     '__RequestVerificationToken': verification_token,
     'page': 1,  # Example: requesting page 2
-    'pageSize': 50,
+    'pageSize': 100,
     'Type': 'YCD',
     'SourceNo': '',
     'GName': '',
